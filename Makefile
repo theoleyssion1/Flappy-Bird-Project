@@ -23,6 +23,8 @@ SRC	=	help.c\
 		event_game_over.c\
 		game_over.c\
 		save_score.c\
+		init_text.c\
+		score.c\
 
 DIR_SRC        =    $(addprefix src/, $(SRC))
 

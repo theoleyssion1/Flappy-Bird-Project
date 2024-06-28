@@ -20,6 +20,7 @@
     #define MENU 8
     #define RETRY 9
     #define GAME_OVER 10
-    #define TOTAL_SPRITE 11
+    #define HEAD 11
+    #define TOTAL_SPRITE 12
 
 #endif /* !DEFINE_H_ */

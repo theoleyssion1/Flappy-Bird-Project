@@ -18,7 +18,6 @@ void event_game(game_t *game)
         }
         pause_game(game);
     }
-    animation_of_bird(game);
     movement_of_bird(game);
     tube_movement(game);
     reset_tube(game);

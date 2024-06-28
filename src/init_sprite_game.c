@@ -14,13 +14,8 @@ static void init_sprite_bird(sprite_t *sprite)
     sprite->clock = sfClock_create();
     sprite->pos = (sfVector2f) {760, 290};
     sprite->scale = (sfVector2f) {4.5, 4.5};
-    sprite->rect_int.height = 28;
-    sprite->rect_int.left = 0;
-    sprite->rect_int.top = 0;
-    sprite->rect_int.width = 28;
     sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
     sfSprite_setPosition(sprite->sprite, sprite->pos);
-    sfSprite_setTextureRect(sprite->sprite, sprite->rect_int);
     sfSprite_setScale(sprite->sprite, sprite->scale);
 }
 

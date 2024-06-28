@@ -10,7 +10,8 @@ int init_all(game_t *game)
 {
     init_window(game);
     init_sprite(game);
-    game->speed = -6;
+    init_text(game);
+    game->speed = -20;
     game->nbr_game = 0;
     return 0;
 }

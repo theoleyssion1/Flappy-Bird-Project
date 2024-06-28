@@ -33,18 +33,3 @@ void movement_of_bird(game_t *game)
         drop(game);
     }
 }
-
-void animation_of_bird(game_t *game)
-{
-    if (sfTime_asMilliseconds(sfClock_getElapsedTime
-    (game->sprite[BIRD].clock)) > 50) {
-        game->sprite[BIRD].rect_int.left += 28;
-        if (game->sprite[BIRD].rect_int.left >= 80) {
-            game->sprite[BIRD].rect_int.left = 0;
-            return;
-        }
-        sfSprite_setTextureRect(game->sprite[BIRD].sprite,
-                                game->sprite[BIRD].rect_int);
-        sfClock_restart(game->sprite[BIRD].clock);
-    }
-}

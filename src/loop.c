@@ -32,6 +32,7 @@ void loop_game(game_t *game)
     game->speed = -6;
     game->nbr_game += 1;
     game->score[game->nbr_game] = 0;
+    score_board(game);
     sfRenderWindow_clear(game->window->window, sfBlack);
     while (sfRenderWindow_isOpen(game->window->window)) {
         sfRenderWindow_clear(game->window->window, sfBlack);
@@ -46,6 +47,7 @@ void loop_game(game_t *game)
             game->sprite[DOWN_TUBE].sprite, NULL);
         sfRenderWindow_drawSprite(game->window->window,
             game->sprite[BIRD].sprite, NULL);
+        sfRenderWindow_drawText(game->window->window, game->text[0].text, NULL);
         sfRenderWindow_display(game->window->window);
     }
 }
@@ -64,6 +66,7 @@ void loop_game_over(game_t *game)
             game->sprite[MENU].sprite, NULL);
         sfRenderWindow_drawSprite(game->window->window,
             game->sprite[RETRY].sprite, NULL);
+        sfRenderWindow_drawText(game->window->window, game->text[0].text, NULL);
         sfRenderWindow_display(game->window->window);
     }
 }

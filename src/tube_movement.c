@@ -29,12 +29,13 @@ void reset_tube(game_t *game)
         game->sprite[UP_TUBE].pos.x = 2000;
         game->sprite[DOWN_TUBE].pos.x = 2000;
         game->score[game->nbr_game] += 1;
+        score_board(game);
         game->sprite[UP_TUBE].pos.y = random_nbr(110, 500) * -1;
         game->sprite[DOWN_TUBE].pos.y = random_nbr(600, 1000);
         sfSprite_setPosition(game->sprite[UP_TUBE].sprite,
             game->sprite[UP_TUBE].pos);
         sfSprite_setPosition(game->sprite[DOWN_TUBE].sprite,
             game->sprite[DOWN_TUBE].pos);
-        game->speed -= 0.3;
+        game->speed -= 1;
     }
 }

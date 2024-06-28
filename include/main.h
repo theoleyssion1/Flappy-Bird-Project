@@ -49,6 +49,7 @@ typedef struct game_s {
     int *score;
     float speed;
     int nbr_game;
+    char *nbr_score;
 } game_t;
 
 typedef struct save_s {
@@ -80,5 +81,7 @@ void return_menu(game_t *game);
 void event_game_over(game_t *game);
 void save_score(game_t *game);
 void animation_of_bird(game_t *game);
+void init_text(game_t *game);
+void score_board(game_t *game);
 
 #endif
