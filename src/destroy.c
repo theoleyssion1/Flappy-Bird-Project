@@ -18,9 +18,20 @@ static void destroy_sprite(game_t *game)
     free(game->sprite);
 }
 
+static void destroy_text(game_t *game)
+{
+    int i = 0;
+
+    sfText_destroy(game->text[i].text);
+    sfFont_destroy(game->text[i].font);
+    free(game->text);
+}
+
 void destroy_all(game_t *game)
 {
     destroy_sprite(game);
+    destroy_text(game);
     sfRenderWindow_destroy(game->window->window);
     free(game->window);
+    free(game->nbr_score);
 }

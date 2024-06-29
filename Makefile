@@ -25,6 +25,8 @@ SRC	=	help.c\
 		save_score.c\
 		init_text.c\
 		score.c\
+		init_at_zero.c\
+		display.c\
 
 DIR_SRC        =    $(addprefix src/, $(SRC))
 

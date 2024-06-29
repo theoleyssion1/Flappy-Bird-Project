@@ -14,8 +14,10 @@ void return_menu(game_t *game)
     game->mouse = sfMouse_getPositionRenderWindow(game->window->window);
     if ((sfFloatRect_contains(&game->sprite[MENU].rect_float,
     game->mouse.x, game->mouse.y) == sfTrue &&
-    sfMouse_isButtonPressed(sfMouseLeft)) == sfTrue)
-        loop_menu(game);
+    sfMouse_isButtonPressed(sfMouseLeft)) == sfTrue) {
+        game->loop = START;
+        loop(game);
+    }
 }
 
 void retry_menu(game_t *game)
@@ -26,8 +28,9 @@ void retry_menu(game_t *game)
     if ((sfFloatRect_contains(&game->sprite[RETRY].rect_float,
     game->mouse.x, game->mouse.y) == sfTrue &&
     sfMouse_isButtonPressed(sfMouseLeft)) == sfTrue) {
-        game->speed = -6;
+        init_at_zero(game);
         game->nbr_game ++;
-        loop_game(game);
+        game->loop = GAME;
+        loop(game);
     }
 }

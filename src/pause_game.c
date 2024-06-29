@@ -14,6 +14,8 @@ void pause_game(game_t *game)
     game->mouse = sfMouse_getPositionRenderWindow(game->window->window);
     if ((sfFloatRect_contains(&game->sprite[PAUSE].rect_float,
     game->mouse.x, game->mouse.y) == sfTrue &&
-    sfMouse_isButtonPressed(sfMouseLeft)) == sfTrue)
-        loop_menu(game);
+    sfMouse_isButtonPressed(sfMouseLeft)) == sfTrue) {
+        game->loop = START;
+        loop(game);
+    }
 }

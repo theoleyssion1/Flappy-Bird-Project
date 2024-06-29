@@ -17,7 +17,8 @@ int main(int argc, char const **argv)
     if (argc != 1)
         return 84;
     init_all(&game);
-    loop_menu(&game);
+    game.loop = START;
+    loop(&game);
     destroy_all(&game);
     return 0;
 }

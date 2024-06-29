@@ -50,6 +50,7 @@ typedef struct game_s {
     float speed;
     int nbr_game;
     char *nbr_score;
+    int loop;
 } game_t;
 
 typedef struct save_s {
@@ -64,8 +65,7 @@ void init_sprite(game_t *game);
 void init_sprite_lobby(game_t *game);
 void init_sprite_game(game_t *game);
 int init_window(game_t *game);
-void loop_menu(game_t *game);
-void loop_game(game_t *game);
+void loop(game_t *game);
 void event_lobby(game_t *game);
 void event_game(game_t *game);
 void movement_of_bird(game_t *game);
@@ -75,13 +75,15 @@ void tube_movement(game_t *game);
 void reset_tube(game_t *game);
 void init_sprite_menu(game_t *game);
 void check_bird_and_tube(game_t *game);
-void loop_game_over(game_t *game);
 void retry_menu(game_t *game);
 void return_menu(game_t *game);
 void event_game_over(game_t *game);
 void save_score(game_t *game);
-void animation_of_bird(game_t *game);
 void init_text(game_t *game);
 void score_board(game_t *game);
+void display_menu(game_t *game);
+void display_game(game_t *game);
+void display_loose(game_t *game);
+void init_at_zero(game_t *game);
 
 #endif

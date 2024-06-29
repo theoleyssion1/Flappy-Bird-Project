@@ -9,6 +9,11 @@
     #define DEFINE_H_
 
     #define OK 0
+
+    #define START 0
+    #define GAME 1
+    #define LOOSE 2
+
     #define BACKGROUND 0
     #define TITLE 1
     #define PLAY_BUTTON 2
@@ -20,7 +25,6 @@
     #define MENU 8
     #define RETRY 9
     #define GAME_OVER 10
-    #define HEAD 11
-    #define TOTAL_SPRITE 12
+    #define TOTAL_SPRITE 11
 
 #endif /* !DEFINE_H_ */

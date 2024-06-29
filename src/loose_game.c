@@ -19,6 +19,7 @@ void check_bird_and_tube(game_t *game)
         &game->sprite[UP_TUBE].rect_float, NULL) == sfTrue) ||
         (sfFloatRect_intersects(&game->sprite[BIRD].rect_float,
         &game->sprite[DOWN_TUBE].rect_float, NULL) == sfTrue)) {
-        loop_game_over(game);
+        game->loop = LOOSE;
+        loop(game);
     }
 }

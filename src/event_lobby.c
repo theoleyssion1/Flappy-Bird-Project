@@ -30,7 +30,10 @@ void event_lobby(game_t *game)
         }
         if ((sfFloatRect_contains(&game->sprite[PLAY_BUTTON].rect_float,
         game->mouse.x, game->mouse.y) == sfTrue) &&
-        sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)
-            loop_game(game);
+        sfMouse_isButtonPressed(sfMouseLeft) == sfTrue) {
+            init_at_zero(game);
+            game->loop = GAME;
+            loop(game);
+        }
     }
 }

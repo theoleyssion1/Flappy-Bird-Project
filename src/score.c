@@ -10,24 +10,30 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* intToStr(int num)
+int lenghtreturn(int num, int length)
 {
-    int temp = num;
-    int length = (num == 0) ? 1 : 0;
-    int isNegative = 0;
-    char* str = (char*)malloc((length + 1) * sizeof(char));
-
-    while (temp != 0) {
-        length++;
-        temp /= 10;
+    if (num == 0) {
+        length = 1;
+    } else {
+        for (int temp = num; temp != 0; temp /= 10)
+            length++;
     }
+    return length;
+}
+
+char *inttostr(int num)
+{
+    int length = 0;
+    int isNegative = 0;
+    char *str;
+
+    length = lenghtreturn(num, length);
     if (num < 0) {
         isNegative = 1;
         length++;
         num = -num;
     }
-    if (str == NULL)
-        return NULL;
+    str = malloc((length + 1) * sizeof(char));
     str[length] = '\0';
     for (int i = length - 1; i >= isNegative; i--) {
         str[i] = (num % 10) + '0';
@@ -40,6 +46,8 @@ char* intToStr(int num)
 
 void score_board(game_t *game)
 {
-    game->nbr_score = intToStr(game->score[game->nbr_game]);
+    char *str = inttostr(game->score[game->nbr_game]);
+
+    game->nbr_score = str;
     sfText_setString(game->text[0].text, game->nbr_score);
 }
